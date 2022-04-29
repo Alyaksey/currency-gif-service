@@ -7,5 +7,5 @@ import org.springframework.web.bind.annotation.RequestParam;
 @FeignClient(name = "giphyClient", url = "${giphy.url}")
 public interface GiphyClient {
     @GetMapping( "/random")
-    String getRandomGif(@RequestParam String api_key, @RequestParam String tag);
+    String getRandomGif(@RequestParam("api_key") String apiKey, @RequestParam String tag);
 }

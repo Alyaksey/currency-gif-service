@@ -8,6 +8,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 @FeignClient(name = "exchangeRatesClient", url = "${oxr.url}")
 public interface ExchangeRatesClient {
     @GetMapping("/historical/{date}.json")
-    String getHistorical(@RequestParam String app_id, @PathVariable String date,
+    String getHistoricalRates(@RequestParam("app_id") String appId, @PathVariable String date,
                          @RequestParam String symbols, @RequestParam String base);
+
+    @GetMapping("/latest.json")
+    String getLatestRates(
+            @RequestParam("app_id") String appId);
 }

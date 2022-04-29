@@ -7,6 +7,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @EnableFeignClients
 @SpringBootApplication
+@ConfigurationPropertiesScan("com.example.currencygifservice.config")
 public class CurrencyGifServiceApplication {
     public static void main(String[] args) {
         SpringApplication.run(CurrencyGifServiceApplication.class, args);
